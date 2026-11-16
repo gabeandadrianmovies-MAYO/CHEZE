@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE CHEZE INCIDENT</title>
+<style>
+* { box-sizing: border-box; }
+body { background:#d3ff33; color:#298f77; font-family:sans-serif; padding:15px; overflow-x:hidden; }
+h1 { color:#999966; padding:17px; background:#ff77bb; border:6px dashed purple; transform:rotate(-2deg); }
+#cheese { font-size:29px; color:#000099; }
+.banana { background:purple; color:white; width:160px; padding:12px; border:4px dotted lime; text-align:center; }
+button { border:3px solid black; border-radius:19px; background:linear-gradient(90deg,red,orange,yellow,lime,cyan,violet); padding:12px; cursor:pointer; font-weight:bold; margin:7px; }
+button:hover { transform:rotate(3deg) scale(1.05); }
+.soup { transform:rotate(2deg); margin:24px 0; }
+table { border:3px solid red; background:#aacc66; width:100%; table-layout:fixed; }
+td { padding:12px; border:2px solid black; overflow-wrap:anywhere; vertical-align:top; }
+#hehe { width:60px; height:60px; background:orange; border-radius:50%; margin:30px; transition:all .4s; }
+input { padding:12px; border:3px solid purple; width:100%; max-width:550px; }
+#result { background:white; padding:15px; border:5px ridge orange; overflow-wrap:anywhere; min-height:55px; }
+#president { background:#fff3a1; color:#7b1161; border:5px double red; padding:15px; margin:15px 0; }
+#warning { background:black; color:lime; padding:15px; font-family:monospace; overflow-wrap:anywhere; }
+#counter { font-size:24px; font-weight:bold; }
+@keyframes wobble { 0% { transform:rotate(-5deg); } 50% { transform:rotate(5deg); } 100% { transform:rotate(-5deg); } }
+.wobble { animation:wobble .3s infinite; }
+#warning a { color:yellow; font-weight:bold; }
+#warning small { display:block; color:#b8e6b8; font-size:11px; margin-top:12px; }
+</style>
+</head>
+<body>
+<h1>CHEZE RULES!!! 🧀</h1>
+<p id="cheese">CHEZE RULZ.</p>
+<div class="banana">CHEZE RULZ</div>
+<p id="counter">CHEZE COUNT: 0</p>
+<button id="button">CHEZE RULZ</button>
+<button id="pizzaButton">VOTE FOR PIZZA</button>
+<button id="virusButton">SCAN FOR VIRUSES</button>
+<button id="panicButton">EMERGENCY BUTTON</button>
+<div class="soup">
+<h3>THE OFFICIAL TABLE OF NONSENSE</h3>
+<table>
+<tr><td>yoUr cOMpUteR hAs 10000BUTTTTTTTTTTTTTTTTTTTT RULES0000000000 vIruSes</td><td>PPPPPPPPPPPPPPPPPPPP IIIIIIIIIIIIIIIIIIII ZZZZZZZZZZZZZZZZZZZZ AAAAAAAAAAAAAAAAAAAA FOR PRESIDENT!!!</td></tr>
+<tr><td>IIIIIIIIIIIIIIIIIIII 💗 UUUUUUUUUUUUUUUUUUUU CHEZE IS CONFUSED</td><td>NNNNNNNNNNNNNNNNNNNN UUUUUUUUUUUUUUUUUUUU NNNNNNNNNNNNNNNNNNNN AAAAAAAAAAAAAAAAAAAA VVVVVVVVVVVVVVVVVVVV UUUUUUUUUUUUUUUUUUUU TTTTTTTTTTTTTTTTTTTT THE CODE GODS DEMAND SOUP</td></tr>
+</table>
+</div>
+<div id="president"><h2>🍕 PIZZA FOR PRESIDENT 🍕</h2><p id="votes">Current votes: 0</p><p>Campaign promise: FREE CHEZE FOR ALL.</p></div>
+<div id="hehe"></div>
+<input id="thing" value="I WANT MY MOMMY!!! HELP! THE GOOD CODE GODS ARE IN PAIN!!!">
+<p id="result">JJJJJJJJJJJJJJJJJJJJ; ;;;;;; CHEZE HAS ENTERED THE CHAT.</p>
+<div id="warning">SYSTEM STATUS: SUSPICIOUSLY CHEESY</div>
+<script>
+let potato = 14;
+let chair = "KHMNBHJHNJUYKMJNHTYJUKIMJNHYUKJ";
+let spoon = true;
+let cheeseCount = 0;
+let votes = 0;
+let panic = false;
+const banana = document.querySelector('.banana');
+const cheese = document.getElementById('cheese');
+const box = document.getElementById('hehe');
+const button = document.getElementById('button');
+const thing = document.getElementById('thing');
+const result = document.getElementById('result');
+const counter = document.getElementById('counter');
+const warning = document.getElementById('warning');
+potato += 7;
+console.log('POTATO:',potato);
+console.log('CHAIR:',chair);
+console.log('SPOON:',spoon);
+banana.style.color = 'white';
+cheese.textContent = 'click here ' + potato;
+let objects = ['Lamp','Soup','Suspicious Potato','73'];
+objects.push('uusje eku rj');
+console.log(objects);
+button.onclick = () => {
+  cheeseCount++;
+  counter.textContent = 'CHEZE COUNT: ' + cheeseCount;
+  box.style.background = 'green';
+  box.style.transform = 'translateX(' + (cheeseCount % 6) * 35 + 'px)';
+  result.textContent = thing.value;
+  banana.textContent = cheeseCount % 2 === 0 ? 'CHEZE RULZ' : 'BANANA PANIC';
+  if (cheeseCount === 10) warning.textContent = 'ALERT: TEN CHEZES HAVE BEEN RELEASED.';
+};
+document.getElementById('pizzaButton').onclick = () => {
+  votes++;
+  document.getElementById('votes').textContent = 'Current votes: ' + votes;
+  if (votes >= 5) {
+    document.getElementById('president').style.background = '#ff99cc';
+    result.textContent = 'PIZZA HAS WON THE ELECTION. THE MOON IS NOW MOZZARELLA.';
+  }
+};
+document.getElementById('virusButton').onclick = () => {
+  const viruses = ['DancingPotato.exe','CheeseOverlord.dll','SuspiciousBanana.txt','SoupOfDoom.zip','DefinitelyNotAMayoVirus'];
+  const found = viruses[Math.floor(Math.random() * viruses.length)];
+  warning.innerHTML =
+    '⚠️ SECURITY ALERT ⚠️<br>' +
+    'THREAT DETECTED: ' + found + '<br>' +
+    'YOUR CHEZE IS IN DANGER!<br>' +
+    'VISIT THE MAGIC POTATO TO SAVE YOUR COMPUTER!<br>' +
+    "<a href='https://gabeandadrianmovies-mayo.github.io/Potato/' target='_blank' rel='noopener noreferrer'>OPEN THE MAGIC POTATO 🥔</a>" +
+    '<small>Fictional security alert for entertainment. No actual scan performed.</small>';
+};
+document.getElementById('panicButton').onclick = () => {
+  panic = !panic;
+  document.body.classList.toggle('wobble',panic);
+  warning.textContent = panic ? 'EMERGENCY! THE ENTIRE WEBSITE IS WOBBLING! VI' : 'EMERGENCY CANCELLED. THE CHEZE IS SAFE.';
+};
+let number = 3 * 9;
+console.log(number);
+document.title = 'dumxxutkkk yj yyyyyyyyyyyyyyyyyyyyd';
+let suspicious = { color:'orange', quantity:17, alive:false };
+console.log(suspicious.color);
+</script>
+</body>
+</html>
